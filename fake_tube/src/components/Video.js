@@ -1,13 +1,9 @@
 
-export default function Video() {
+export default function Video({ id, title, url, width, height }) {
   return (
-    <div>
-        
-        <img src=""/>
-        <p>
-            
-        </p>
-
+    <div className="Video">
+        <img src={url} width={width} height={height} alt="welp" id={id} />
+        <label htmlFor={id}>{title}</label>
     </div>
   )
 }

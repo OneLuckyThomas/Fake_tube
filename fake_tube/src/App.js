@@ -8,7 +8,7 @@ function App() {
       <nav>
         <Link to="/">Home</Link>
         <Link to="/SearchView">SearchView</Link>
-        <Link to="/VideoView">VideoView</Link>
+        <Link to="/VideoViewer">VideoView</Link>
         <SearchBar/>
       </nav>
 

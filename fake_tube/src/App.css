@@ -12,6 +12,7 @@ nav{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    align-items: center;
     gap: 5px;
     padding-bottom: 10px;
 }
@@ -35,3 +36,35 @@ nav a{
 }
 
 /* Page specific */
+
+
+/* Default View Page */
+
+/* .VideosContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding-bottom: 10px;
+} */
+
+.VideosContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.Video{
+    display: grid;
+    padding-bottom: 10px;
+}
+
+.Video img, label{
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+    text-align: center;
+    text-wrap: balance;
+    text-overflow: ellipsis;
+}
