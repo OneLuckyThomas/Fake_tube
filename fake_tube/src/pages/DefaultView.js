@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import Video from "../components/Video";
+import { useNavigate } from "react-router-dom";
 
 // GET https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=PL&key=[YOUR_API_KEY]
 // KEY = AIzaSyDlDRpz38NR8R2JebraC_aGLdyh_B63Je0
@@ -10,6 +11,7 @@ import Video from "../components/Video";
 export default function DefaultView() {
 
   const [videosData, setVideosData] = useState([]);
+  const navigate = useNavigate();
 
   const client = axios.create({
     baseURL: 'https://youtube.googleapis.com/youtube/v3/'
@@ -20,6 +22,10 @@ export default function DefaultView() {
     const response = await client.get(`videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=PL&key=${key}`);
     console.log(response.data);
     setVideosData(response.data.items);
+  }
+
+  function handleVideoClick(id){
+    navigate(`${id}`);
   }
 
   useEffect(()=>{
@@ -35,6 +41,7 @@ export default function DefaultView() {
           url={video.snippet.thumbnails.medium.url}
           width={video.snippet.thumbnails.medium.width}
           height={video.snippet.thumbnails.medium.height}
+          onClick={()=>{handleVideoClick(video.id)}}
         />
     )
  

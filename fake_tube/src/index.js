@@ -10,7 +10,8 @@ import reportWebVitals from './reportWebVitals';
 import App from './App';
 import DefaultView from './pages/DefaultView';
 import SearchView from './pages/SearchView';
-import VideoViewer from './pages/VideoViewer';
+import VideoPlayer from './pages/VideoPlayer';
+import NotFound from './pages/NotFound';
 
 //Router
 
@@ -25,8 +26,9 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index element={<DefaultView/>}/>
-      <Route path=':vID' element={<VideoViewer/>}/>
+      <Route path=':vID' element={<VideoPlayer/>}/>
       <Route path='/SearchView' element={<SearchView/>}/>
+      <Route path='*' element={<NotFound/>}/>
     </Route>
   )
 );

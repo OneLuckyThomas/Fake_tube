@@ -68,3 +68,12 @@ nav a{
     text-wrap: balance;
     text-overflow: ellipsis;
 }
+
+/* Video Player */
+
+.VideoPlayer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
