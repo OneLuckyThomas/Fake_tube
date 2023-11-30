@@ -7,8 +7,6 @@ function App() {
     <div className='RootLayout'>
       <nav>
         <Link to="/">Home</Link>
-        <Link to="/SearchView">SearchView</Link>
-        <Link to="/VideoViewer">VideoView</Link>
         <SearchBar/>
       </nav>
 
